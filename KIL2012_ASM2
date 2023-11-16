@@ -1,0 +1,29 @@
+def simple_calculator():
+    try:
+        user_input1 = int(input("Enter the first number: "))
+    except ValueError:
+        print("Please enter a valid number")
+    
+    try:
+        user_input2 = int(input("Enter the second number: "))
+    except ValueError:
+        print("Please enter a valid number")
+
+    try:
+        user_input3 = input("Please choose mathematical operation (+, -, *, /): ")
+        if user_input3 == "+":
+            result = user_input1 + user_input2
+        elif user_input3 == "-":
+            result = user_input1 - user_input2
+        elif user_input3 == "*":
+            result = user_input1 * user_input2
+        elif user_input3 == "/":
+            try:
+                result = user_input1 / user_input2
+            except ZeroDivisionError:
+                print("Division by zero is not allowed")
+                return result
+
+    except:
+        print("Please enter a valid mathematical operation:")
+print(simple_calculator())
